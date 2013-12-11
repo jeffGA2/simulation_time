@@ -1,0 +1,20 @@
+Simulation time control plan
+
+Variable Design
+
+1. statistic time variable(which has to be consider to analys effeciency):
+person average waitting time, lift idle time, percentage of busy lift, occupancy, waiting queue length, predict person arrival time.
+
+2. random time variable(which has to be generated randomly and used to compute the statistic time variable):
+	person arrival time.
+
+3. constant time variable(which used to compute the statistic time variable):
+	door open time, close time and person enter time. 2 seconds for one of each time.
+
+
+Time control Design
+
+We design the simulation based on the dicrete simulation theory. We didn't update each seconds in our simulation because there is no point to update when nothing happend.
+According to this point, we first go resort the random arrival time of people to simulate the real coming order. we go from event to event in the queue of each floor to calulate the waiting time, number of waitting people, etc. Everytime we done the predict arrival time, we track back and find the earlier time and get the statistic result.
+
+Now we start to complete the logical code...continue...
