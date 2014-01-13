@@ -1,0 +1,33 @@
+statical data name_convention
+
+1. main class
+
+1).Static variable "over", this variable let the program know stop the simulating process.
+
+2).Two object "lift t[]" "passenger p[]" . passenger object will store the information about people which created randomly. lift object store the lift info. These objects have to be "static" because the other class also have to call them.
+
+3).Time control: we chosse to use Timer class which contains in java.util package. Use "timer.schedule". Main process will traversal both objects every seconds and trace the changes by using "schedule process".
+
+4).Time count: we choose to use integer variable "int timecount" to count the time. Everytime the simulation finish traversal work, this variable will add 1.
+
+notes: all variable about time will transfer to the seconds use integer type.
+
+passenger class
+
+1). "int arrivetime" store passenger arrive time which created randomly 
+
+2). "int waitingtime" store each one of passengers waiting time. The calculate method is enter_time - arrive_time
+
+3). "P_status": The main process trace the change every seconds. There will be several status to make sure where the passenger and what the passenger is doing at that moment. example: "status[5][2] = 1" means at 5 floor and in the lift2, the value means waiting (1 means waiting, 2 means entering, 3 means in the lift). 
+
+4). "static T" use to store the enter time. 
+
+lift class
+
+1). "L_status" the status of the lift. once the system detect a new arrival the status changes to running which stored as "1". "2" means stop but have the next runnning task. "0" means idle.
+Once the L_status switch to the 0. the system will stored the current time and start to timing the idle time which will be a important statical figures data to output in the end.
+
+3) "full" if there is a passenger enters, the function enter() will add 1 to the variable "occupancy" and leaver() will reduce 1 to it, once it reach to the cappcity the lift will be not allowed to pick any passenger till someone get off the lift.
+
+2) "occupancy" record the the lift occupancy.(???)
+
